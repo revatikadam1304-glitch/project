@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task 2</title>
+
+    <style>
+        body {
+            background-color: rgb(61, 107, 177);
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #welcomePage {
+            display: none;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: rgb(241, 241, 247);
+        }
+
+        #welcomePage h1 {
+            color: rgb(8, 10, 8);
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Registration Form -->
+    <div id="formPage">
+
+        <h1>Registration Form</h1>
+
+        <form onsubmit="showWelcome(event)">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <br><br>
+
+            <label>Gender:</label>
+
+            <input type="radio" id="male" name="gender" required>
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender">
+            <label for="female">Female</label>
+
+            <br><br>
+
+            <label for="country">Country:</label>
+
+            <select id="country" required>
+                <option value="">Select Country</option>
+                <option>India</option>
+                <option>Brazil</option>
+                <option>Canada</option>
+                <option>China</option>
+                <option>Russia</option>
+            </select>
+
+            <br><br>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </div>
+
+    <!-- Welcome Page -->
+    <div id="welcomePage">
+        <h1>Welcome! you have been registered.</h1>
+    </div>
+
+    <script>
+        function showWelcome(event) {
+            event.preventDefault();
+
+            document.getElementById("formPage").style.display = "none";
+            document.getElementById("welcomePage").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
